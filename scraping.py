@@ -19,7 +19,7 @@ with st.expander("show sample data"):
 
 tab1, tab2 = st.tabs(["Descriptive Analysis","Visualisation"])
 
-@st.fragment
+
 def descriptive():
     with tab1:
         descriptive_col1, descriptive_col2, descriptive_col3 = st.columns(3, border=True)
@@ -65,15 +65,25 @@ def descriptive():
             st.write("Top 5 Books with the highest Price")
             st.dataframe(title_top_price.head(5))
 
-
-@st.fragment               
-def visualisation():            
-    descriptive()
-    
     with tab2:
         visualisation_col1, visualisation_col2, visualisation_col3 = st.columns(3, border=True)
 
         with visualisation_col1:
+            rating_ = df["Rating"].unique()
+            rating_select = st.selectbox("Select Rating", rating_)
+
+        with visualisation_col2:
+            pass 
+
+        with visualisation_col3:
             pass
 
-visualisation()
+
+
+        
+descriptive()
+
+
+
+
+
