@@ -19,7 +19,7 @@ with st.expander("show sample data"):
 
 tab1, tab2 = st.tabs(["Descriptive Analysis","Visualisation"])
 
-
+@st.fragment
 def descriptive():
     with tab1:
         descriptive_col1, descriptive_col2, descriptive_col3 = st.columns(3, border=True)
@@ -65,23 +65,37 @@ def descriptive():
             st.write("Top 5 Books with the highest Price")
             st.dataframe(title_top_price.head(5))
 
+ 
+
+
+def visulisation():
     with tab2:
         visualisation_col1, visualisation_col2, visualisation_col3 = st.columns(3, border=True)
 
         with visualisation_col1:
-            rating_ = df["Rating"].unique()
-            rating_select = st.selectbox("Select Rating", rating_)
+            st.subheader("Rating vs. Average Price")
+            avg_price_rating = df.groupby('Rating')['Price'].mean().reset_index()
+            fig4 = px.bar(avg_price_rating, x='Rating', y='Price', color='Rating', title="Average Price by Rating")
+            st.plotly_chart(fig4)
 
         with visualisation_col2:
-            pass 
+            st.subheader("Number of Books per Rating")
+            rating_counts = df['Rating'].value_counts().reset_index()
+            rating_counts.columns = ['Rating', 'Count']
+            fig1 = px.bar(rating_counts, x='Rating', y='Count', color='Rating', title="Books per Rating")
+            st.plotly_chart(fig1)
 
         with visualisation_col3:
-            pass
+            st.subheader("Price Distribution (Histogram)")
+            fig3 = px.histogram(df, x='Price', nbins=20, title="Price Distribution")
+            st.plotly_chart(fig3)
 
 
 
-        
+     
 descriptive()
+visulisation()
+
 
 
 
