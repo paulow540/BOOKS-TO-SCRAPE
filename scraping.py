@@ -67,12 +67,13 @@ def descriptive():
 
 
 @st.fragment               
-def visualisation():
+def visualisation():            
+    descriptive()
+    
     with tab2:
         visualisation_col1, visualisation_col2, visualisation_col3 = st.columns(3, border=True)
 
         with visualisation_col1:
             pass
-        
-descriptive()
+
 visualisation()
