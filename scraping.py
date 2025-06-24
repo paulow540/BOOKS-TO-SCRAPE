@@ -5,6 +5,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 st.set_page_config("web scraping","🕸️",layout="wide")
 
 st.title("WEB SCRAPING APP")
