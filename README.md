@@ -72,6 +72,9 @@ streamlit run app.py
 ```bash
 streamlit
 pandas
+matplotlib
+numpy
+seaborn
 beautifulsoup4
 requests
 plotly
