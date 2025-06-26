@@ -55,7 +55,7 @@ book_scraper_streamlit/
 └── README.md
 ```
 ```bash
-git clone https://github.com/yourusername/book-scraper-streamlit.git
+git clone https://github.com/paulow540/BOOKS-TO-SCRAPE.git
 cd book-scraper-streamlit
 ```
 
