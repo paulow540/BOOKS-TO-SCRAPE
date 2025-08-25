@@ -3,6 +3,8 @@
 A complete **web scraping + data analysis** project built in Python using [Books to Scrape](https://books.toscrape.com) as a case study. The project scrapes **multiple pages**, 
 processes the data into a structured format, and uses **Streamlit** for interactive visualizations and analysis.
 
+check the app analysis [here](https://books-to-scrape.streamlit.app/)
+
 ---
 
 ## 🚀 Features
